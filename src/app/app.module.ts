@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './components/chart/chart.component';
+import { FormIncludesValuesComponent } from './components/form-includes-values/form-includes-values.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
 registerLocaleData(localePt, 'pt');
@@ -13,12 +14,13 @@ registerLocaleData(localePt, 'pt');
   declarations: [
     AppComponent,
     HomePageComponent,
-    ChartComponent
+    ChartComponent,
+    FormIncludesValuesComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' }
