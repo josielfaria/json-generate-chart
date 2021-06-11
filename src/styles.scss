@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "OrangeJuice";
+  src: local("OrangeJuice"), url(./assets/fonts/orange-juice.ttf) format("truetype");
+}
+
+.title {
+  margin: auto;
+  text-align: center;
+  font-family: "OrangeJuice";
+  font-size: 5rem;
+}
+
