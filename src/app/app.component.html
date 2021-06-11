@@ -1,15 +1,47 @@
-<nav>
-  <ul>
-    <li>
-      <a
-        routerLink="/home"
-        routerLinkActive="active"
-      >
-        Home
-      </a>
-    </li>
-  </ul>
-</nav>
+<mat-toolbar class="mat-elevation-z8">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+  Convert values ​​to chart
+</mat-toolbar>
 
-<!-- The routed views render in the <router-outlet>-->
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenav="matSidenav"
+    class="mat-elevation-z8"
+  >
+
+    <div class="avatar mat-elevation-z8"></div>
+
+    <h4 class="name">Josiel Faria</h4>
+    <p class="designation">Software Engineer</p>
+
+    <mat-divider></mat-divider>
+
+    <button
+      mat-button
+      class="menu-button"
+    >
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+
+    <!-- <mat-divider></mat-divider> -->
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
