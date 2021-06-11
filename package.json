@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "serve": "npm run start",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -19,6 +20,8 @@
     "@angular/platform-browser": "~11.2.12",
     "@angular/platform-browser-dynamic": "~11.2.12",
     "@angular/router": "~11.2.12",
+    "chart.js": "^3.3.2",
+    "date-fns": "^2.22.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
