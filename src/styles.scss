@@ -3,12 +3,25 @@
   src: local("OrangeJuice"), url(./assets/fonts/orange-juice.ttf) format("truetype");
 }
 
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-divider {
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 .title {
   margin: auto;
   text-align: center;
   font-family: "OrangeJuice";
-  font-size: 5rem;
+  font-size: 3rem;
+  padding: 1rem;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
