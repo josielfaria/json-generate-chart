@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataChart } from 'src/app/shared/models/data-chart.model copy';
+import { DataChart } from 'src/app/shared/models/data-chart.model';
 
 @Component({
   selector: 'app-home-page',
@@ -12,11 +12,11 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     const data = new DataChart();
-    data.labels = ['labels4', 'labels5', 'labels6'];
-    data.datasets = [{ data: [51, 31, 44], label: 'valor', backgroundColor: '#607d8b' }];
+
+    data.addDataset(['labels4', 'labels5', 'labels6'], [51, 31, 44], 'valor');
+    data.addDatasetColumn([51, 31, 44], 'quantidade', '#8bc34a');
 
     this.dataChart = data;
-    console.log('this.dataChart2', this.dataChart);
   }
 
 }

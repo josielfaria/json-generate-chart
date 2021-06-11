@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import * as Chart from 'chart.js';
-import { DataChart } from 'src/app/shared/models/data-chart.model copy';
+import { DataChart } from 'src/app/shared/models/data-chart.model';
 
 @Component({
   selector: 'app-chart',
@@ -27,9 +27,7 @@ export class ChartComponent implements AfterViewInit {
       data: this.data,
       options: {
         responsive: true, legend: { position: 'bottom' },
-        scales: {
-          yAxes: [{ ticks: { beginAtZero: true } }]
-        }
+        scales: { yAxes: [{ ticks: { beginAtZero: true } }] }
       }
     };
 
