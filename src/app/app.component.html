@@ -1,9 +1,5 @@
 <mat-toolbar class="mat-elevation-z8">
-  <button
-    mat-icon-button
-    *ngIf="sidenav.mode === 'over'"
-    (click)="sidenav.toggle()"
-  >
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
     <mat-icon *ngIf="!sidenav.opened">
       menu
     </mat-icon>
@@ -15,25 +11,19 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav
-    #sidenav="matSidenav"
-    class="mat-elevation-z8"
-  >
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
 
     <div class="avatar mat-elevation-z8"></div>
 
-    <h4 class="name">Josiel Faria</h4>
-    <p class="designation">Software Engineer</p>
+    <h4 class="name">{{name}}</h4>
+    <p class="designation">{{designation}}</p>
 
     <mat-divider></mat-divider>
 
-    <button
-      mat-button
-      class="menu-button"
-    >
-      <mat-icon>home</mat-icon>
-      <span>Home</span>
-    </button>
+
+    <div *ngFor="let sm of socialMedias">
+      <app-button-social-media [socialMedia]="sm"></app-button-social-media>
+    </div>
 
     <!-- <mat-divider></mat-divider> -->
 
