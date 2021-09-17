@@ -7,6 +7,7 @@ import { DataChart } from 'src/app/shared/models/data-chart.model';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
+  title = 'Convert values ​​to chart';
 
   dataChart = new DataChart();
 

@@ -1,5 +1,5 @@
 <div class="container">
-  <app-chart [title]="'Esse é o novo título'" [data]="dataChart"></app-chart>
+  <app-chart [title]="title" [data]="dataChart"></app-chart>
   <mat-divider></mat-divider>
   <app-form-includes-values (dataChartEmitter)="setDataChart($event)"></app-form-includes-values>
 </div>

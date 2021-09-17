@@ -1,16 +1,72 @@
-<mat-expansion-panel
-  (opened)="panelOpenState = true"
-  (closed)="panelOpenState = false"
->
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      Self aware panel
-    </mat-panel-title>
-    <mat-panel-description>
-      Currently I am {{panelOpenState ? 'open' : 'closed'}}
-    </mat-panel-description>
-  </mat-expansion-panel-header>
-  <p>I'm visible because I am open</p>
-</mat-expansion-panel>
+<mat-card>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="mb">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Adicione Colunas
 
- <button mat-raised-button color="primary" (click)="teste()">Click</button>
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+
+    <!-- Content -->
+
+    <mat-grid-list cols="4" rowHeight="2:1" [gutterSize]="'16px'">
+      <mat-grid-tile *ngFor="let item of columns">
+        <mat-form-field appearance="fill">
+          <mat-label>Nome da coluna</mat-label>
+          <input matInput [(ngModel)]="item.value">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <button mat-mini-fab color="primary" (click)="addColumnsLabels()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Items por Coluna
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-grid-list cols="4" rowHeight="2:1" [gutterSize]="'16px'" *ngFor="let item of itensColumns">
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>Nome do item</mat-label>
+          <input matInput [(ngModel)]="item.name">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile *ngFor="let valor of item.values">
+        <mat-form-field appearance="fill">
+          <mat-label>Valor</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <button mat-mini-fab color="primary" (click)="addValueItens()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <button mat-mini-fab color="primary" (click)="addItensColumns()">
+      <mat-icon>add</mat-icon>
+    </button>
+
+  </mat-expansion-panel>
+
+  <!-- <button
+    mat-raised-button
+    color="primary"
+    (click)="teste()"
+  >Click</button> -->
+
+</mat-card>
